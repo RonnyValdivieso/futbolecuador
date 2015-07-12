@@ -1,0 +1,155 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+header {
+	background-color: #fdd835;
+	border-bottom: 5px solid #FBC02D;
+	width: 100%;
+}
+.logo-section, .menu-bar {
+	display: inline-block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.logo-section {
+	max-width: 300px;
+	max-height: 80px;
+	width: 95%;
+}
+.menu-bar {
+	position: relative;
+	float: right;
+}
+h1 {
+	font-size: 18px;
+}
+.bt-menu {
+	padding: 10px;
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+	font-size: 30px;
+	cursor: pointer;
+}
+nav {
+	width: 100%;
+	max-width: 1000px;
+	background-color: #fdd835;
+}
+nav ul {
+	list-style: none;
+	background-color: #fdd835;
+}
+nav ul li {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+nav ul li span {
+	margin-right: 10px;
+}
+nav ul li a {
+	color: #000;
+	text-decoration: none;
+}
+button {
+	border-style: none;
+	margin-top: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+button#guardar {
+	background-color: #1E88E5;
+	color: #fff;
+	border-bottom: solid 2px #1976D2;
+}
+button#agregar {
+	background-color: #43A047;
+	color: #fff;
+	border-bottom: solid 2px #388E3C;
+}
+.contenido {
+	margin-top: 75px;
+}
+
+#formulario {
+	visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+	.logo-section {
+		max-width: 200px;
+		max-height: 60px;
+		width: 95%;
+		padding: 10px 0 10px 20px;
+	}
+	.menu-bar {
+		height: 100%;
+		padding: 13px 0 13px 0;
+	}
+	.bt-menu {
+		padding: 15px;
+	}
+	nav {
+		width: 100%;
+		display: none;
+		margin: 0;
+		position: fixed;
+	}
+	nav ul {
+		overflow: hidden;
+	}
+	nav ul li {
+		display: block;
+		width: 100%;
+	}
+	nav ul li a {
+		padding: 20px 10px 20px 10px;
+		width: 100%;
+		display: block;
+	}
+	nav ul li:hover {
+		color: #fff;
+		/*background-color: #64B5F6;*/
+		border-right: 5px solid #1976D2;
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.logo-section {
+		width: 100px;
+		padding: 0 0 0 20px;
+	}
+	.menu-bar {
+		display: none;
+	}
+	header {
+		padding: 10px 0 10px 0;
+	}
+	nav {
+		width: 650px;
+		margin: 0;
+		float: right;
+		display: inline;
+		padding-right: 10px;
+	}
+	nav ul {
+		padding: 10px 0 0 15px;
+		float: right;
+	}
+	nav ul li {
+		display: inline;
+		padding: 16px 0 20px 0;
+	}
+	nav ul li a {
+		padding: 16px 10px 24px 10px;
+	}
+	nav ul li:hover {
+		color: #fff;
+		/*background-color: #64B5F6;*/
+		border-top: 5px solid #1976D2;
+	}
+}

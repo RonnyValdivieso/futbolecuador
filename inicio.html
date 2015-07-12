@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Futbol Ecuador</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+</head>
+<body>
+	<header>
+		<div class="logo-section">
+			<h1>CAMPEONATO ECUATORIANO</h1>
+		</div>
+		<div class="menu-bar">
+			<a href="#" class="bt-menu"><span class="icon-menu"></span></a>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#"><span class="icon-home"></span>INICIO</a></li>
+				<li><a href="#">NOTICIAS</a></li>
+				<li><a href="#">TABLA DE POSICIONES</a></li>
+				<li><a href="#">ESDÍSTICAS</a></li>
+				<li><a href="#">EQUIPOS</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="contenido">
+		<div>
+			<h3>Equipos</h3>
+			<div id="formulario">
+				<form id="myForm" action="equipos.php" method="POST">
+					<input type="text" name="nombre" placeholder="Nombre de equipo">
+					<button id="guardar">Guardar</button>
+				</form>
+				<span id="result"></span>
+			</div>
+			<button id="agregar" onclick="mostrarFormulario()">Agregar Nuevo</button>
+			<button id="mostrar" onclick="mostrarEquipos()">Mostrar Equipos</button>
+		</div>
+	</div>
+	<footer></footer>
+
+	<script type="text/javascript">
+		function mostrarFormulario() {
+			var form = document.getElementById('formulario');
+			form.style.visibility = "visible";
+		}
+
+		function mostrarEquipos() {
+
+		}
+
+		$('#guardar').click(function(){
+			$.post($('#myForm').attr('action'), $('#myForm :input').serializeArray(), function(info) {
+				$('#result').html(info);
+				clearInput();
+			});
+			$('#myForm').hide();
+		});
+
+		$('#myForm').submit(function() {
+			return false;
+		});
+
+		function clearInput() {
+			$('#myForm :input').each(function() {
+				$(this).val('');
+			})
+		}
+	</script>
+</body>
+</html>
