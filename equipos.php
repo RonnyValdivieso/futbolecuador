@@ -3,7 +3,7 @@
 
 	$conexion = mysql_connect("localhost", "root", "root") or die("FALLÓ LA CONEXIÓN CON EL SERVIDOR");
 
-	mysql_select_db("futbolec", $conexion) or die("NO SE PUDO CONECTAR CON LA BASE DE DATOS");
+	mysql_select_db("futbolecuador", $conexion) or die("NO SE PUDO CONECTAR CON LA BASE DE DATOS");
 
 	$guardar = mysql_query("INSERT INTO equipo VALUES (NULL, '".$nombre."')", $conexion);
 
