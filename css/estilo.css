@@ -61,7 +61,7 @@ button {
 	padding-bottom: 5px;
 	cursor: pointer;
 }
-button#guardar {
+button#guardar, button#mostrar {
 	background-color: #1E88E5;
 	color: #fff;
 	border-bottom: solid 2px #1976D2;
@@ -77,6 +77,23 @@ button#agregar {
 
 #formulario {
 	visibility: hidden;
+}
+fieldset span {
+	text-align: center;
+	padding: 0 30px 0 30px;
+	background-color: #469;
+	color: #fff;
+}
+fieldset span.equipo {
+	padding: 0 25px 0 25px;
+}
+tr {
+}
+
+td {
+	text-align: center;
+	width: 80px;
+	padding-left: 8px;
 }
 
 @media screen and (max-width: 768px) {

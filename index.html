@@ -38,21 +38,42 @@
 				<span id="result"></span>
 			</div>
 			<button id="agregar" onclick="mostrarFormulario()">Agregar Nuevo</button>
-			<button id="mostrar" onclick="mostrarEquipos()">Mostrar Equipos</button>
+			<button id="mostrar">Mostrar Equipos</button>
+			<fieldset>
+				<legend>Tabla de Posiciones</legend>
+				<span class="equipo">Equipos</span> 
+				<span>PJ</span>
+				<span>GF</span>
+				<span>GC</span>
+				<span>GD</span>
+				<span>PTS</span>
+				<span>Racha</span>
+				<span>Rendimiento</span>
+			</fieldset>
 		</div>
-
 	</div>
 	<footer></footer>
 
 	<script type="text/javascript">
+		var showTabla = false;
 		function mostrarFormulario() {
 			var form = document.getElementById('formulario');
 			form.style.visibility = "visible";
 		}
 
-		function mostrarEquipos() {
 
-		}
+		//Traer datos de Tabla de posiciones 'posicionesprimeraetapa'
+		$('#mostrar').click(function() {
+			if(!showTabla) {
+				showTabla = true;
+				$.getJSON("tabla.php", function(data) {
+
+					$.each(data.result, function() {		
+						$("fieldset").append("<tr><td>" + this['Equipos'] + "</td> <td>" + this['PartidosJugados'] + "</td> <td>" + this['GolesFavor'] + "</td> <td>" + this['GolesContra'] + "</td> <td>" + this['GolDiferencia'] + "</td> <td>" + this['Puntos'] + "</td> <td>" + this['Racha'] + "</td> <td>" + this['Rendimiento'] + "</td><tr>");
+					});
+				});
+			}
+		});
 
 		$('#guardar').click(function(){
 			$.post($('#myForm').attr('action'), $('#myForm :input').serializeArray(), function(info) {
